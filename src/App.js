@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Clube from './components/Clube';
+import Header from './components/comps_p/Header';
+import Home from './components/Home';
+import Socios from './components/Socios';
+import Modalidades from './components/Modalidades';
+import Info from './components/Info.jsx';
+import Galeria from './components/Galeria';
+import Loja from './components/Loja';
+import Carrinho from './components/Carrinho';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={ <Home /> } />
+            <Route path="/clube" element={ <Clube /> } />
+            <Route path="/socios" element={<Socios />} /> 
+            <Route path="/modalidades" element={<Modalidades />} /> 
+            <Route path="/info" element={<Info />} /> 
+            <Route path="/galeria" element={<Galeria />} />
+            <Route path="/loja" element={<Loja />} />
+            <Route path="/carrinho" element={<Carrinho />} />
+          </Routes>          
+        
+      </div>
+    </BrowserRouter>
   );
 }
 
