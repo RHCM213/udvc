@@ -33,7 +33,7 @@ export default function Header() {
             <NavLink to="/Loja" title="Loja">Loja</NavLink>
           </li>
           <div className="carrinho">
-            <NavLink to="/" title="Carrinho">Carrinho</NavLink>
+            <NavLink to="Carrinho" title="Carrinho">Carrinho</NavLink>
           </div>
         </ul>       
       </nav>
