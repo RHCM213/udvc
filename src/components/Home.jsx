@@ -2,35 +2,33 @@ import React from 'react'
 
 
 export default function Home({articles}) {
-  //console.log( articles );
-
-  const homeposts = articles.slice(0, 3).map(i => {
-      return <article class="articles">{i}</article>
-    })
-        
-
-
   
-
-
-
-
-
-
-  console.log(homeposts);
+  /*  const homeArticles = articles.slice(0, 3).map(article => {
+      return <article class="articles"></article>
+    })*/
+        
+  const homeArticles = articles.slice(0, 3)
 
   return (
    
-    
-
-
     <div>
       <section>
-        {homeposts}
+      {homeArticles.map ((homeArticle, index) => (
+
+      <article key={index} >
+          <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc }/>
+          <h2>{ homeArticle.title }</h2>
+          <p>{ homeArticle.excerpt }</p>
+      </article>
+  
+
+      ))
+      }
+        
         
         
     
-     HOME
+     
       
      
       </section>

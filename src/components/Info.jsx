@@ -6,7 +6,7 @@ export default function Info({articles}) {
 
   return (
   
-    <section>
+    <div>
       {articles.map( (article, index) => (
 
       <article key={index}>
@@ -21,7 +21,7 @@ export default function Info({articles}) {
       }
       
      
-    </section>
+    </div>
   
 
 
