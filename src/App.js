@@ -8,7 +8,7 @@ import Modalidades from './components/Modalidades';
 import Info from './components/Info.jsx';
 import Galeria from './components/Galeria';
 import Loja from './components/Loja';
-import Carrinho from './components/Carrinho';
+import Footer from './components/comps_p/Footer';
 
 
 
@@ -65,9 +65,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
           <Header />
-          
-          
-          
           <Routes>
             <Route path="/" element={ <Home articles={articles} /> } />
             <Route path="/clube" element={ <Clube /> } />
@@ -76,8 +73,8 @@ function App() {
             <Route path="/info" element={<Info articles={articles} />} /> 
             <Route path="/galeria" element={<Galeria />} />
             <Route path="/loja" element={<Loja />} />
-            <Route path="/carrinho" element={<Carrinho />} />
-          </Routes>          
+          </Routes> 
+          <Footer />         
         
       </div>
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 export default function Home({articles}) {
@@ -18,18 +19,11 @@ export default function Home({articles}) {
           <h2>{ homeArticle.title }</h2>
           <p>{ homeArticle.excerpt.split('\n').map(txt => <p>{txt}</p>) }</p>
       </article>
-  
-
       ))
       }
-        
-        
-        
-    
-     
-      
-     
+      <NavLink to="/Info" title="Ir para mais artigos Info" className={"linker"} role={"button"} aria-label={"ler mais artigos informativos"}>Ler Mais</NavLink>
       </section>
+
       
 
 
