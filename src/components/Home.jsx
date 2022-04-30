@@ -2,10 +2,6 @@ import React from 'react'
 
 
 export default function Home({articles}) {
-  
-  /*  const homeArticles = articles.slice(0, 3).map(article => {
-      return <article class="articles"></article>
-    })*/
         
   const homeArticles = articles.slice(0, 3)
 
