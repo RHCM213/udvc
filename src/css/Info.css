@@ -16,3 +16,7 @@
     background-color: rgba(59, 6, 30, 0.95);
 }
 
+.space::before {
+    content: "\a";
+    white-space: pre;
+}

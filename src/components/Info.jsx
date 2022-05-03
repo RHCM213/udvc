@@ -1,44 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import "./Info.css"
+import React, { useEffect } from 'react'
+import "../css/Info.css"
 
 
 
-export default function Info({articles}) {
-  //console.log( articles );
+export default function Info({articles, toggle}) {
+  
   useEffect(() => {
     window.scrollTo({top: 0})
   }, []);
 
 
-  const [showArt, setShowArt] = useState(false);
-        
-  function toggleShow() {
-    setShowArt(!showArt);
-  }
-
-
   return (
-    <div>
+    <main>
       {articles.map( (article, index) => (
 
-      <article key={index} className={"article"}>
-        <img src= { "/images/artg/" + article.img } alt={ article.desc } onClick={toggleShow}/>
+      <article key={index} className="article">
+        <img src= { "/images/artg/" + article.img } alt={ article.desc } onClick={()=>toggle(index)}/>
         <h2>{ article.title }</h2>
-        {showArt && 
+        {article.modalVisible && 
           <div className="modalart">
             <article className="singleart">
-              <button onClick={toggleShow}>close</button>
+              <button onClick={()=>toggle(index)}>close</button>
               <img src= { "/images/artg/" + article.img } alt={ article.desc }/>
               <h2>{ article.title }</h2>
-              <p>{ article.text.split('\n').map(txt => <p>{txt}</p>) }</p>
-              <p className="postdate">{ article.postdate }</p>  
+              <div>{ article.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
+              <p className="postdate space">{ article.postdate }</p>  
             </article>
           </div>
         }
       </article> 
       ))
       } 
-    </div>
+    </main>
   
   )
 }

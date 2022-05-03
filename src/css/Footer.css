@@ -1,0 +1,29 @@
+
+
+footer {
+    height: 100px;
+    padding-bottom: 10px;
+    background-color: #3B061E;
+    background: linear-gradient(90deg, rgba(59,6,30,1) 35%, rgba(102,0,51,1) 100%);
+    color: #ffff;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.footer_iconscontainer {
+    display: flex;
+    align-items:center;
+    gap: 5px;
+}
+
+.footer_iconscontainer img {
+    width: 2rem;   
+    
+}
