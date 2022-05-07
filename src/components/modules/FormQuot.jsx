@@ -40,7 +40,7 @@ export default function FormQuot() {
         {formSubmitted &&
             <div>
             <FormMB />
-            <p>Valor a Pagar:{ formData.q_categ == "Quota Normal" ? (2*formData.feeQuant + "€") : (formData.feeQuant + "€") }</p> 
+            <p>Valor a Pagar:{ formData.q_categ === "Quota Normal" ? (2*formData.feeQuant + "€") : (formData.feeQuant + "€") }</p> 
             </div>   
         }      
         {!formSubmitted &&    

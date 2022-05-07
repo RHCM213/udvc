@@ -1,4 +1,4 @@
-.close_button {
+.close_btn {
     background: url("/public/images/outros/circle-xmark-solid.svg");
     width: 100px;
     height: 100px;
@@ -6,6 +6,6 @@
 	cursor: pointer;
 }
 
-.close_button:hover {
+.close_btn:hover {
     transform: scale(1.1);
 }

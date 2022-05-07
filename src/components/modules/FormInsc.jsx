@@ -47,13 +47,13 @@ export default function FormInsc() {
       {formSubmitted &&
         <div>
           <FormMB />
-          <p>Valor a Pagar:{ formData.categ == "Insc Normal" ? "7€" : "15€" }</p> 
+          <p>Valor a Pagar:{ formData.categ === "Insc Normal" ? "7€" : "15€" }</p> 
         </div>   
       }
       {!formSubmitted &&
         <div>      
           <h2>INSCRIÇÃO SÓCIO</h2>
-          <p>Valor Inscrição: 7€ // Pack Familia*: 15€</p>
+          <p>Valor Inscrição: 7€ // Pack Familia: 15€</p>
           <p>OFERTAS: 2 Meses de Quotas // 2 Fatos de Treino e 1 Chapéu (só Pack Familia)</p>
           <form onSubmit={ handleSubmit }>
             <input type="text" name="fullName" arial-label="nome completo" placeholder="Nome Completo" minLength="3" maxLength="40" required autoFocus onChange={handleChange} value={formData.fullname} />

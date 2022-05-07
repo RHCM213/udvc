@@ -24,8 +24,6 @@ function App() {
     setArticles(articlesCopy);
   }
 
-
-
   useEffect( () => {
 
     setArticles ([
@@ -81,86 +79,151 @@ function App() {
     ]);
   },[]); 
   
-   
+  
+  const [ products, setProducts ] = useState([])
 
-  const products = [
-    {
-      id: 9, 
-      img: "a09.jpg",
-      prod: "Chapéu União", 
-      desc: "Chapéu estilo 'Trucker' com rede atrás e emblema da UDVC a cores na frente.",
-      price: "15 €" 
-    },
-    {
-      id: 8, 
-      img: "a08.jpg",
-      prod: "Cachecol União", 
-      desc: "Cachecol de malha luxuosa canelada de duas camadas, com o emblema UDVC.",
-      price: 15 
-    },
-    {
-      id: 7, 
-      img: "a07.jpg",
-      prod: "Sweat Branca União", 
-      desc: "Sweat-shirt de cor branca, 50% Algodão, 50% Poliéster, costura dupla na gola. Com a estampa do logótipo a cores da UDVC à frente.",
-      price: 20
-    },
-    {
-      id: 6, 
-      img: "a06.jpg",
-      prod: "Crachá União", 
-      desc: "Crachá 32mm com emblema UDVC.",
-      price: 3 
-    },
-    {
-    id: 5, 
-    img: "a05.jpg",
-    prod: "Galhardete União", 
-    desc: "Galhardete 9x12 mm, material de longa duração, com emblema UDVC.",
-    price: 8
-    }, 
-    {
-    id: 4, 
-    img: "a04.jpg",
-    prod: "Sweat Capuz União", 
-    desc: "Sweat-shirt com capuz e cor cinza, 50% Algodão, 50% Poliéster, costura dupla na gola, com estampa do emblema UDVC em cor de vinho à frente.",
-    price: 25
-    },
-    {
-    id: 3, 
-    img: "a03.jpg",
-    prod: "T-Shirt Branca União", 
-    desc: "T-Shirt de cor branca, 97% Algodão, 3% Poliéster, costura dupla na gola. Com pequena estampa do emblema UDVC em cor preta à frente no peito.",
-    price: 10
-    },
-    {
-    id: 2, 
-    img: "a02.jpg",
-    prod: "T-Shirt Preta União", 
-    desc: "T-Shirt de cor preta, 97% Algodão, 3% Poliéster, costura dupla na gola. Com a estampa do logótipo UDVC a cores à frente.",
-    price: 12
-    },
-    {
-    id: 1, 
-    img: "a01.jpg",
-    prod: "Casaco Fecho União", 
-    desc: "Casaco de fecho, cor de vinho, com pequeno emblema da UDVC em cor branca no peito e um 'V' à frente.",
-    price: 20
-    } 
-  ]
+  function toggleProductOn(index) {
+    const productsCopy=[ ...products];
+    productsCopy[index].modalVisible=!productsCopy[index].modalVisible;
 
+    setProducts(productsCopy);
+  }
+
+  useEffect( () => {
+    setProducts ([
+      {
+        id: 9, 
+        img1: "p09.jpg",
+        img2: "p09_1.jpg",
+        img3: "p09.jpg",
+        img4: "p09.jpg",
+        img5: "p09.jpg",
+        title: "Chapéu União", 
+        desc: "Chapéu com rede atrás e emblema da UDVC",
+        text: "Chapéu estilo 'Trucker' com rede atrás e emblema da UDVC a cores na frente.",
+        price: 15,
+        modalVisible: false
+      },
+      {
+        id: 8, 
+        img1: "p08.jpg",
+        img2: "p08_1.jpg",
+        img3: "p08.jpg",
+        img4: "p08.jpg",
+        img5: "p08.jpg",
+        title: "Cachecol União", 
+        desc: "Cachecol de malha com o emblema UDVC",
+        text: "Cachecol de malha luxuosa canelada de duas camadas, com o emblema UDVC.",
+        price: 15,
+        modalVisible: false
+      },
+      {
+        id: 7, 
+        img1: "p07.jpg",
+        img2: "p07.jpg",
+        img3: "p07.jpg",
+        img4: "p07.jpg",
+        img5: "p07.jpg",
+        title: "Sweat Branca União", 
+        desc: "Sweat-shirt branca com emblema UDVC à frente",
+        text: "Sweat-shirt de cor branca, 50% Algodão, 50% Poliéster, costura dupla na gola. Com a estampa do logótipo a cores da UDVC à frente.", 
+        price: 20,
+        modalVisible: false
+      },
+      {
+        id: 6, 
+        img1: "p06.jpg",
+        img2: "p06.jpg",
+        img3: "p06.jpg",
+        img4: "p06.jpg",
+        img5: "p06.jpg",
+        title: "Crachá União", 
+        desc: "Crachá com emblema UDVC",
+        text: "Crachá 32mm com emblema UDVC.",
+        price: 3,
+        modalVisible: false 
+      },
+      {
+        id: 5, 
+        img1: "p05.jpg",
+        img2: "p05_1.jpg",
+        img3: "p05.jpg",
+        img4: "p05.jpg",
+        img5: "p05.jpg",
+        title: "Galhardete União", 
+        desc: "Galhardete com emblema UDVC",
+        text: "Galhardete 9x12 mm, material de longa duração, com emblema UDVC.", 
+        price: 8,
+        modalVisible: false
+      }, 
+      {
+        id: 4, 
+        img1: "p04.jpg",
+        img2: "p04.jpg",
+        img3: "p04.jpg",
+        img4: "p04.jpg",
+        img5: "p04.jpg",
+        title: "Sweat Capuz União", 
+        desc: "Sweat-shirt cinza com capuz com emblema UDVC à frente",
+        text: "Sweat-shirt com capuz e cor cinza, 50% Algodão, 50% Poliéster, costura dupla na gola, com estampa do emblema UDVC em cor de vinho à frente.", 
+        price: 25,
+        modalVisible: false
+      },
+      {
+        id: 3, 
+        img1: "p03.jpg",
+        img2: "p03_1.jpg",
+        img3: "p03.jpg",
+        img4: "p03.jpg",
+        img5: "p03.jpg",
+        title: "T-Shirt Branca União", 
+        desc: "T-Shirt branca com pequeno emblema UDVC no peito",
+        text: "T-Shirt de cor branca, 97% Algodão, 3% Poliéster, costura dupla na gola. Com pequena estampa do emblema UDVC em cor preta à frente no peito.",
+        price: 10,
+        modalVisible: false
+      },
+      {
+        id: 2, 
+        img1: "p02.jpg",
+        img2: "p02_1.jpg",
+        img3: "p02.jpg",
+        img4: "p02.jpg",
+        img5: "p02.jpg",
+        title: "T-Shirt Preta União", 
+        desc: "T-Shirt preta com emblema UDVC à frente",
+        text: "T-Shirt de cor preta, 97% Algodão, 3% Poliéster, costura dupla na gola. Com a estampa do logótipo UDVC a cores à frente.", 
+        price: 12,
+        modalVisible: false
+      },
+      {
+        id: 1, 
+        img1: "p01.jpg",
+        img2: "p01_1.jpg",
+        img3: "p01.jpg",
+        img4: "p01.jpg",
+        img5: "p01.jpg",
+        title: "Casaco Fecho União", 
+        desc: "Casaco de fecho cor de vinho com pequeno emblema UDVC no peito e um 'V' à frente",
+        text: "Casaco de fecho, cor de vinho, com pequeno emblema da UDVC em cor branca no peito e um 'V' à frente.",
+        price: 20,
+        modalVisible: false
+      } 
+    ]);
+  },[]);
+
+ 
   return (
     <BrowserRouter>
       <div className="App">
           <Header />
           <Routes>
-            <Route path="/" element={ <Home articles={articles} toggle={(index)=>toggleArticleOn(index)} /> } />
+            <Route path="/" element={ <Home articles={articles} toggle={(index)=>toggleArticleOn(index)} products={products} togglep={(index)=>toggleProductOn(index)}/> } />
             <Route path="/clube" element={ <Clube /> } />
             <Route path="/socios" element={<Socios />} /> 
             <Route path="/modalidades" element={<Modalidades />} /> 
             <Route path="/info" element={<Info articles={articles} toggle={(index)=>toggleArticleOn(index)} />} /> 
             <Route path="/galeria" element={<Galeria />} />
-            <Route path="/loja" element={<Loja products={products} />} />
+            <Route path="/loja" element={<Loja products={products} togglep={(index)=>toggleProductOn(index)} />} />
           </Routes> 
           <Footer />         
         

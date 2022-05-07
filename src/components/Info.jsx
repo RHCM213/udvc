@@ -20,7 +20,7 @@ export default function Info({articles, toggle}) {
         {article.modalVisible && 
           <div className="modalart">
             <article className="singleart">
-              <button onClick={()=>toggle(index)}>close</button>
+              <button className="close_btn" onClick={()=>toggle(index)}></button>
               <img src= { "/images/artg/" + article.img } alt={ article.desc }/>
               <h2>{ article.title }</h2>
               <div>{ article.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
