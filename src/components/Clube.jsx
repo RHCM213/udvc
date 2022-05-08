@@ -33,7 +33,7 @@ export default function Clube() {
 
   return (
     <main>
-      <div className="clube_container">
+      <div className="list_container">
         <ul>
           <li onClick={histClick}>
             <h2 ref={historyRef}>Breve História &#8794;</h2>

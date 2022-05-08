@@ -16,7 +16,7 @@ export default function Socios() {
   return (
     
     <main>
-      <div className="socios_container">
+      <div className="list_container">
         <ul>
           <li onClick={()=>setRegistOn(!registOn)}>
             <h2>Inscrição Sócio &#8788;</h2>
