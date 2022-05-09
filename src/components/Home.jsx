@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import FormInsc from './modules/FormInsc';
 
@@ -13,11 +13,24 @@ export default function Home({articles, toggle, products, togglep}) {
   
   const [pubOn, setPubOn] = useState(false);
 
+  const prodCarousel = useRef(null);
+
+  function handleClickLeft(event){
+    event.preventDefault();
+    console.log(prodCarousel.current)
+    prodCarousel.current.scrollLeft -= prodCarousel.current.offsetWidth
+  };
+
+  function handleClickRight(event){
+    event.preventDefault();
+    prodCarousel.current.scrollLeft += prodCarousel.current.offsetWidth
+  };
+
 
   return (
    
     <main>
-      <section>
+      <section className="home_articles">
       {homeArticles.map ((homeArticle, index) => (
 
         <article key={index} className={"homeArt" + index}>
@@ -51,36 +64,42 @@ export default function Home({articles, toggle, products, togglep}) {
           </div>}       
       </section>
 
-      <section>
-      {homeProducts.map ((homeProduct, index) => (
+      <section className="home_products">
+        <div className="prod_carousel" ref={prodCarousel}>
+        {homeProducts.map ((homeProduct, index) => (
 
-        <article key={index} className={"homeArt" + index}>
-          <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc } onClick={()=>togglep(index)}/>
-        <div className="prod_title">
-          <h2>{ homeProduct.title }</h2>
-          <p>{homeProduct.price + "€"}</p>
-        </div>
-        {homeProduct.modalVisible && 
-          <div className="modalart">
-            <section className="singleprod">
-              <button className="close_btn" onClick={()=>togglep(index)}></button>
-              <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc }/>
-              <div>
-                <img src= { "/images/prod/" + homeProduct.img2 } alt={ homeProduct.desc }/>
-                <img src= { "/images/prod/" + homeProduct.img3 } alt={ homeProduct.desc }/>
-                <img src= { "/images/prod/" + homeProduct.img4 } alt={ homeProduct.desc }/>
-                <img src= { "/images/prod/" + homeProduct.img5 } alt={ homeProduct.desc }/>
-              </div>
+          <div key={index} className="prod_container">
+              <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc } onClick={()=>togglep(index)}/>
+            <div className="prod_title">
               <h2>{ homeProduct.title }</h2>
-              <div>{ homeProduct.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
-              <div className="price">{ homeProduct.price + "€"}</div>  
-            </section>
+              <p>{homeProduct.price + "€"}</p>
+            </div>
+            {homeProduct.modalVisible && 
+              <div className="modalart">
+                <section className="singleprod">
+                  <button className="close_btn" onClick={()=>togglep(index)}></button>
+                  <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc }/>
+                  <div>
+                    <img src= { "/images/prod/" + homeProduct.img2 } alt={ homeProduct.desc }/>
+                    <img src= { "/images/prod/" + homeProduct.img3 } alt={ homeProduct.desc }/>
+                    <img src= { "/images/prod/" + homeProduct.img4 } alt={ homeProduct.desc }/>
+                    <img src= { "/images/prod/" + homeProduct.img5 } alt={ homeProduct.desc }/>
+                  </div>
+                  <h2>{ homeProduct.title }</h2>
+                  <div>{ homeProduct.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
+                  <div className="price">{ homeProduct.price + "€"}</div>  
+                </section>
+              </div>
+            }
           </div>
-          }
-       </article>
 
-      ))
-      }
+        ))
+        }
+        </div>
+      <div>        
+        <button onClick={handleClickLeft}>left</button>
+        <button onClick={handleClickRight}>right</button>
+      </div>
       <NavLink to="/Loja" title="Ir para Loja" className="link_btn" role="button" aria-label="ver mais produtos na loja">Visitar Loja</NavLink>
       </section>
 

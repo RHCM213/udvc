@@ -1,0 +1,6 @@
+.prod_carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+}

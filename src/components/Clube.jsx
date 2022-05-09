@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import "../css/Clube.css"
+import "../css/Home.css"
 
 export default function Clube() {
   
@@ -17,7 +17,7 @@ export default function Clube() {
   
   function localClick() {
     setLocalOn(!localOn);   
-    localRef.current.scrollIntoView({ behavior: 'smooth' })
+    console.log(localRef.current.scrollIntoView({ behavior: 'smooth' }))
   };
 
 
