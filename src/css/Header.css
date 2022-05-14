@@ -1,18 +1,14 @@
-* {
-    margin: 0;
-}
-
 header {
-    background-color: #3B061E;
-    background: linear-gradient(90deg, rgba(59,6,30,1) 35%, rgba(102,0,51,1) 100%);
+    display: grid;  
+    grid-template-columns: 1fr;
+    background: linear-gradient( 90deg, #3B061E 35%, #660033 100% );
     color: #ffff;
-    display: flex;
-    align-items: flex-end;
-    height: 230px;
+    
+    padding: 1.3vw 5vw 1vw 5vw;    
 }
 
-.header_container {
-    width: 100%;
+
+.header_container {   
     display: flex;
     justify-content: space-between;
     align-items: flex-end;  
@@ -20,21 +16,17 @@ header {
 
 
 h1 img {
-    width: 9rem;
-    
-    
+    width: 11vw;    
 }
+
 
 nav {
     height: 100%;
     display: flex;
-    align-items: center;
-    padding-bottom: 10px;
-    
-
-    
-   
+    align-items:flex-end;
+    padding-bottom: 0.5rem;   
 }
+
 
 .header_icon {
     height: 1.2rem;
@@ -46,27 +38,30 @@ nav ul li {
     list-style: none;
     display: inline;
     margin-right: 15px;
-   
-
+    font-family:'Roboto Slab', serif; 
+    font-weight: 400;
 }
+
 
 .nav_link:link, .nav_link:visited {
     color: #fff;
-    font-size: 1.25rem;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
+    font-size: 1.5vw; 
     text-decoration: none;
-  }
-  
-  .nav_link:hover {
-    color: #dbc77d;
-  }
-  .nav_link:active {
-    color: #3B061E;
-  }
+}
 
-.carrinho {
+
+.nav_link:hover {
+    color: #dbc77d;
+}
+
+
+.nav_link:active {
+    color: #3B061E;
+}
+
+
+.shopcard {
     height: 1.2rem;
     margin-left: 20px;
-
+    line-height: 0;
 }

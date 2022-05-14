@@ -7,8 +7,8 @@ export default function Header() {
     <header role="banner">
       <div className="header_container"> 
         <h1>
-          <NavLink to="/" title="Home" className="logo_link">
-          <img src="/images/header/L_header_01.svg" role="link home" aria-label="simbolo" alt="simbolo UDVC"/>
+          <NavLink to="/" title="Home" className="logo_link" role="link home" aria-label="ir para página home" >
+          <img src="/images/header/L_header_01.svg" alt="simbolo UDVC"/>
           </NavLink>
         </h1>
         <nav>
@@ -32,8 +32,8 @@ export default function Header() {
               <NavLink to="/Loja" title="Loja" className="nav_link"><img src="/images/header/store-solid.svg" className="header_icon" aria-label="ir para loja" alt="loja"/>LOJA</NavLink>
             </li>
           </ul>
-          <div className="carrinho">
-          <img src="/images/header/cart-shopping-solid.svg" aria-label="ir para carro de compras" className="header_icon" alt="carro de compras"/>(0)
+          <div className="shopcard">
+          <img src="/images/header/cart-shopping-solid.svg" aria-label="ir para carro de compras" className="header_icon" alt="carro de compras"/>0
           </div>                
         </nav>
       </div>

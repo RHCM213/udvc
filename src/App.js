@@ -31,7 +31,7 @@ function App() {
         id: 5, 
         img: "a05.jpg",
         desc: "foto de equipa", 
-        title: "CARREGA UNIÃO! Grande Vitória!", 
+        title: "CARREGA UNIÃO! - Grande Vitória!", 
         excerpt: "Os nossos jogadores da equipa de futsal foram a Mafra em mais um jogo a contar para o Campeonato do INATEL de Futsal 2021/22.\nApesar da muita luta que a equipa contrária ofereceu portaram-se à altura e trouxeram a vitória.", 
         text: "Na tarde do dia 9 de Abril, no passado sábado, a nossa equipa de futsal visitou o reduto da equipa mafrense 'RF Monte Godel', em mais um jogo a contar para o Campeonato de Lisboa do INATEL de Futsal 2021/22.\nA equipa de Mafra encontrava-se, antes desta jornada no primeiro posto. Após um jogo bastante equilibrado e em que a equipa da casa esteve 2 vezes na frente, a UDVC não virou a cara à luta e trouxe uma suada vitória expressa num resultado de 4-6, o que lhe valeu o assalto ao primeiro lugar, é caso para dizer 'a União faz a força'!\nParabéns rapazes!\nPontuação (LX INATEL 21/22 - FUTSAL):\n1. UDVC (14P) / 2. RF GODEL (13P) / 3. FC ROSSÃO (10P) / 4. GD BARCARENA (8P) / 5. CC CORUCHEUS (8P) / 6. GRDR TOJEIRA (7P) / 7. BAIRRO S.JOÃO AC (2P)", 
         postdate: "12 de Abril, 2022",

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import FormInsc from './modules/FormInsc';
-
+import '../css/Home.css';
 
 
 export default function Home({articles, toggle, products, togglep}) {
@@ -30,77 +30,81 @@ export default function Home({articles, toggle, products, togglep}) {
   return (
    
     <main>
-      <section className="home_articles">
-      {homeArticles.map ((homeArticle, index) => (
+      <section className="home_info">
+        <div className="home_articles">
+          {homeArticles.map ((homeArticle, index) => (
 
-        <article key={index} className={"homeArt" + index}>
-          <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc } onClick={()=>toggle(index)}/>
-          <h2>{ homeArticle.title }</h2>
-          <div>{ homeArticle.excerpt.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
-          {homeArticle.modalVisible && 
-            <div className="modalart">
-              <article className="singleart">
-                <button className="close_btn" onClick={()=>toggle(index)}></button>
-                <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc }/>
-                <h2>{ homeArticle.title }</h2>
-                <div>{ homeArticle.text.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
-                <p className="postdate">{ homeArticle.postdate }</p>      
-              </article>
+          <article key={index} className="home_article">
+            <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc } onClick={()=>toggle(index)}/>
+            <div className="home_articletxt">
+              <h2 onClick={()=>toggle(index)}>{ homeArticle.title }</h2>
+              <div>{ homeArticle.excerpt.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
+              <div className="btn_txt" role="button" onClick={()=>toggle(index)}>Continuar a Ler...</div>
             </div>
+            {homeArticle.modalVisible && 
+              <div className="modalart">
+                <article className="singleart">
+                  <button className="close_btn" onClick={()=>toggle(index)}></button>
+                  <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc }/>
+                  <h2>{ homeArticle.title }</h2>
+                  <div>{ homeArticle.text.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
+                  <p className="postdate">{ homeArticle.postdate }</p>      
+                </article>
+              </div>
+            }          
+          </article>
+          ))
           }
-       </article>
-
-      ))
-      }
-      <NavLink to="/Info" title="Ir para mais artigos Info" className="link_btn" role="button" aria-label="ler mais artigos informativos">Ler Mais</NavLink>
+        </div>
+        <NavLink to="/Info" title="Ir para mais artigos Info" className="btn" role="button" aria-label="ler mais artigos informativos">Ler Mais</NavLink>
       </section>
       
-      <section className="pub_container"> 
+      <section className="home_pub"> 
         <img src="../images/homepub/Pub_home.jpg" alt="" />
-        <button onClick={()=>setPubOn(!pubOn)}>Inscreve-te</button>
+        <button className="btn" onClick={()=>setPubOn(!pubOn)}>Inscreve-te</button>
         {pubOn && <div className="modalart">
             <button className="close_btn" onClick={()=>setPubOn(!pubOn)}></button> 
             <FormInsc />
           </div>}       
       </section>
 
-      <section className="home_products">
-        <div className="prod_carousel" ref={prodCarousel}>
-        {homeProducts.map ((homeProduct, index) => (
+      <section className="home_store_content">
+          <div className="home_products" ref={prodCarousel}>
+          {homeProducts.map ((homeProduct, index) => (
 
-          <div key={index} className="prod_container">
+            <div key={index} className="home_prod">
               <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc } onClick={()=>togglep(index)}/>
-            <div className="prod_title">
-              <h2>{ homeProduct.title }</h2>
-              <p>{homeProduct.price + "€"}</p>
-            </div>
-            {homeProduct.modalVisible && 
-              <div className="modalart">
-                <section className="singleprod">
-                  <button className="close_btn" onClick={()=>togglep(index)}></button>
-                  <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc }/>
-                  <div>
-                    <img src= { "/images/prod/" + homeProduct.img2 } alt={ homeProduct.desc }/>
-                    <img src= { "/images/prod/" + homeProduct.img3 } alt={ homeProduct.desc }/>
-                    <img src= { "/images/prod/" + homeProduct.img4 } alt={ homeProduct.desc }/>
-                    <img src= { "/images/prod/" + homeProduct.img5 } alt={ homeProduct.desc }/>
-                  </div>
-                  <h2>{ homeProduct.title }</h2>
-                  <div>{ homeProduct.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
-                  <div className="price">{ homeProduct.price + "€"}</div>  
-                </section>
+              <div className="home_prodinfo">
+                <h2>{ homeProduct.title }</h2>
+                <p>{homeProduct.price + "€"}</p>
               </div>
-            }
-          </div>
+              {homeProduct.modalVisible && 
+                <div className="modalart">
+                  <section className="singleprod">
+                    <button className="close_btn" onClick={()=>togglep(index)}></button>
+                    <img src= { "/images/prod/" + homeProduct.img1 } alt={ homeProduct.desc }/>
+                    <div>
+                      <img src= { "/images/prod/" + homeProduct.img2 } alt={ homeProduct.desc }/>
+                      <img src= { "/images/prod/" + homeProduct.img3 } alt={ homeProduct.desc }/>
+                      <img src= { "/images/prod/" + homeProduct.img4 } alt={ homeProduct.desc }/>
+                      <img src= { "/images/prod/" + homeProduct.img5 } alt={ homeProduct.desc }/>
+                    </div>
+                    <h2>{ homeProduct.title }</h2>
+                    <div>{ homeProduct.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
+                    <div className="price">{ homeProduct.price + "€"}</div>            
+                  </section>
+                </div>
+              }
+            </div>
 
-        ))
-        }
-        </div>
-      <div>        
-        <button onClick={handleClickLeft}>left</button>
-        <button onClick={handleClickRight}>right</button>
-      </div>
-      <NavLink to="/Loja" title="Ir para Loja" className="link_btn" role="button" aria-label="ver mais produtos na loja">Visitar Loja</NavLink>
+          ))
+          }
+          </div>
+            <button className="btn_prodleft" onClick={handleClickLeft}>left
+            </button>
+            <button className="btn_prodright" onClick={handleClickRight}>right</button>
+        
+        <NavLink to="/Loja" title="Ir para Loja" className="btn" role="button" aria-label="ver mais produtos na loja">Visitar Loja</NavLink>
       </section>
 
     </main>
