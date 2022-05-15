@@ -56,7 +56,7 @@ export default function Home({articles, toggle, products, togglep}) {
           ))
           }
         </div>
-        <NavLink to="/Info" title="Ir para mais artigos Info" className="btn" role="button" aria-label="ler mais artigos informativos">Ler Mais</NavLink>
+        <NavLink to="/Info" className="btn" title="Ir para mais artigos Info" role="button" aria-label="ler mais artigos informativos">Ler Mais</NavLink>
       </section>
       
       <section className="home_pub"> 
@@ -67,8 +67,9 @@ export default function Home({articles, toggle, products, togglep}) {
             <FormInsc />
           </div>}       
       </section>
-
-      <section className="home_store_content">
+      
+      <section className="home_store">
+        <div>
           <div className="home_products" ref={prodCarousel}>
           {homeProducts.map ((homeProduct, index) => (
 
@@ -100,13 +101,13 @@ export default function Home({articles, toggle, products, togglep}) {
           ))
           }
           </div>
-            <button className="btn_prodleft" onClick={handleClickLeft}>left
-            </button>
-            <button className="btn_prodright" onClick={handleClickRight}>right</button>
-        
-        <NavLink to="/Loja" title="Ir para Loja" className="btn" role="button" aria-label="ver mais produtos na loja">Visitar Loja</NavLink>
+          <button className="btn_left" role="button" aria-label="mover produtos para a esquerda" onClick={handleClickLeft}></button>
+          <button className="btn_right" role="button" aria-label="mover produtos para a direita" onClick={handleClickRight}></button> 
+        </div>
+        <div className="btn_linkstore">
+          <NavLink to="/Loja" className="btn" title="Ir para Loja" role="button">Visitar Loja</NavLink>
+        </div>
       </section>
-
     </main>
   )
 }

@@ -90,12 +90,12 @@ main {
 }
     
 ::-webkit-scrollbar-thumb {
-    background: hsl(333, 96%, 32%); 
+    background: #a0034a; 
     border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #3B061E;
+    background: #3B061E;
 }
     
 

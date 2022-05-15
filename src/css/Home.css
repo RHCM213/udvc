@@ -21,6 +21,11 @@
     background-color: #3B061E;
 }
 
+.home_info .btn:hover {
+    background-color: #a0034a;      
+}
+
+
 .home_articles {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
@@ -88,7 +93,7 @@
 
 .home_articletxt {
     color: white;
-    padding: 15px;   
+    padding: 1rem;   
 }
 
 
@@ -113,31 +118,41 @@
 }
 
 
-/* .home_store_content {
+.home_store .btn_linkstore {
     display: flex;
-    flex-wrap: wrap;    
-} */
+    justify-content: center;  
+}
+
+.home_store .btn:hover {
+    background-color: #a0034a;    
+}
+
+
+.home_store > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2vw;
+}
 
 
 .home_products {  
     display: flex;
-    /* align-items: center; */
-    position: relative;
     overflow-x: auto;
     scroll-behavior: smooth;    
 }
 
 
-/* .home_products::-webkit-scrollbar {
+.home_products::-webkit-scrollbar {
     display: none;   
-} */
+}
 
 
 .home_prod {
     margin-right: 0.8vw;
     background-color: #660033;
     color: #ffffff;
-    text-align: center; 
+    text-align: center;     
 }
 
 
@@ -148,6 +163,7 @@
 
 .home_prod img {
     width: 30vw;
+    cursor: pointer;
 }
 
 
@@ -168,5 +184,27 @@
     font-style: italic;
 }
 
+.home_store button {
+    position: absolute;
+}
 
+.btn_left {
+    background: url("/public/images/outros/circle-arrow-left-solid.svg");
+    opacity: 0.4;
+    width: 4.2vw;
+    height: 4.2vw;
+    border: none;
+	cursor: pointer;
+    left: 0.5vw;
+}
+
+.btn_right {
+    background: url("/public/images/outros/circle-arrow-right-solid.svg");
+    opacity: 0.4;
+    width: 4.2vw;
+    height: 4.2vw;
+    border: none;
+	cursor: pointer;
+    right: 0.5vw;   
+}
 
