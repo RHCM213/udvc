@@ -62,12 +62,10 @@ table {
 /* »»»»»»»»»»»»»»»»»»»»»»»»»»»»»R»»E»»S»»E»»T»»»»»»»»»»»»»»»»»»»»»»»»»»»»» */
 
 
-
 html {
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     font-family: 'Roboto Serif', serif;
 }
-
 
 
 body {
@@ -75,14 +73,33 @@ body {
     box-sizing: border-box;
 }
 
+
+header, footer {
+    display: grid;  
+    grid-template-columns: 1fr;
+    background: linear-gradient( 90deg, #3B061E 35%, #660033 100% ); 
+}
+
+
+.hdrftr_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
 main {
     margin: 5vw 5vw 15vw 5vw;
 }
 
-
+/* @media screen and (min-width: 1200px) {
+    main {
+        margin: 15vw 15vw 45vw 15vw;
+    }
+} */
 
 ::-webkit-scrollbar {
-    width: 1rem;   
+    width: 1.5vw;   
 }
    
 ::-webkit-scrollbar-track {
@@ -97,24 +114,27 @@ main {
 ::-webkit-scrollbar-thumb:hover {
     background: #3B061E;
 }
-    
+
+
 
 h2, h3 {
     font-family:'Roboto Slab', serif; 
     font-weight: 700;
-    line-height: 2.6rem;
-    
+    line-height: 2.6rem;    
 }
-  
+ 
+
 p, div, .btn {
     font-family: 'Roboto Serif', serif;
     font-weight: 300;
-   
+    color: #ffffff;   
 }  
+
 
 p {
     line-height: 1.6rem;
 }
+
 
 .btn {
     font:initial;
@@ -124,12 +144,10 @@ p {
     text-decoration: none;
     padding: 0.5rem 1.8rem;
     cursor: pointer;
-    color: white;
     border: none;
-    border-radius: 0 0 1.1rem 1.1rem;
-    
-    
+    border-radius: 0 0 1.1rem 1.1rem;   
 }
+
 
 .close_btn {
     background: url("/public/images/outros/circle-xmark-solid.svg");
@@ -138,6 +156,7 @@ p {
     border: none;
 	cursor: pointer;
 }
+
 
 .close_btn:hover {
     transform: scale(1.1);

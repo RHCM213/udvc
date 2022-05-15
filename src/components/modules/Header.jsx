@@ -5,9 +5,9 @@ import '../../css/Header.css';
 export default function Header() {
   return (
     <header role="banner">
-      <div className="header_container"> 
+      <div className="header_container hdrftr_cont"> 
         <h1>
-          <NavLink to="/" title="Home" className="logo_link" role="link home" aria-label="ir para página home" >
+          <NavLink to="/" title="Home" role="link home" aria-label="ir para página home" >
           <img src="/images/header/L_header_01.svg" alt="simbolo UDVC"/>
           </NavLink>
         </h1>

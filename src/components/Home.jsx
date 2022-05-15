@@ -101,8 +101,8 @@ export default function Home({articles, toggle, products, togglep}) {
           ))
           }
           </div>
-          <button className="btn_left" role="button" aria-label="mover produtos para a esquerda" onClick={handleClickLeft}></button>
-          <button className="btn_right" role="button" aria-label="mover produtos para a direita" onClick={handleClickRight}></button> 
+          <button className="btn_left" aria-label="mover produtos para a esquerda" onClick={handleClickLeft}></button>
+          <button className="btn_right" aria-label="mover produtos para a direita" onClick={handleClickRight}></button> 
         </div>
         <div className="btn_linkstore">
           <NavLink to="/Loja" className="btn" title="Ir para Loja" role="button">Visitar Loja</NavLink>

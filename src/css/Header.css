@@ -1,51 +1,40 @@
 header {
-    display: grid;  
-    grid-template-columns: 1fr;
-    background: linear-gradient( 90deg, #3B061E 35%, #660033 100% );
-    color: #ffff;
-    
     padding: 1.3vw 5vw 1vw 5vw;    
 }
 
 
-.header_container {   
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;  
-}
-
-
-h1 img {
+header h1 img {
     width: 11vw;    
 }
 
 
-nav {
+header nav {
     height: 100%;
     display: flex;
     align-items:flex-end;
-    padding-bottom: 0.5rem;   
+    padding-bottom: 1vw;   
 }
 
 
 .header_icon {
     height: 1.2rem;
-    margin-right: 4px;
+    margin-right: 0.25rem;
 }
 
 
-nav ul li {
+nav li {
     list-style: none;
     display: inline;
-    margin-right: 15px;
+    margin-right: 0.9rem;
     font-family:'Roboto Slab', serif; 
     font-weight: 400;
+    font-size: 1.7vw;
+    
 }
 
 
 .nav_link:link, .nav_link:visited {
-    color: #fff;
-    font-size: 1.5vw; 
+    color: #ffffff; 
     text-decoration: none;
 }
 
@@ -62,6 +51,9 @@ nav ul li {
 
 .shopcard {
     height: 1.2rem;
-    margin-left: 20px;
-    line-height: 0;
+    margin-left: 0.8rem;
 }
+
+
+/* @media screen and (min-width: 490px) {
+} */

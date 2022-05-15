@@ -1,28 +1,28 @@
 
 
 footer {
-    height: 100px;
-    padding-bottom: 10px;
-    background: linear-gradient(90deg, #3B061E 35%, #660033 100%);
-    color: #ffff;
-    display: flex;
-    align-items: flex-end;
+    padding: 4vw 5vw 0.8vw; 
+}   
+
+
+.footer_container p {
+    line-height: 1.5rem;
+    font-size: 1.5vw;
 }
 
-.footer_container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
+
+.footer_infocontainer p:nth-child(2) {
+    font-size: 1.3vw;
 }
+
 
 .footer_iconscontainer {
     display: flex;
     align-items:center;
-    gap: 5px;
+    gap: 0.4rem;
 }
 
+
 .footer_iconscontainer img {
-    width: 2rem;   
-    
+    height: 1.4rem;      
 }
