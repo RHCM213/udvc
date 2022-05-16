@@ -1,0 +1,15 @@
+.menu_hamb {
+    font-family:'Roboto Slab', serif; 
+    font-weight: 400;
+    font-size: 4vw;  
+}
+
+.menu_hamb .header_icon {
+    height: 3.2vw;
+    min-height: 1.5rem;
+    margin-right: 1.3vw;
+}
+
+.menu_hamb li {
+    margin-bottom: 2vw;
+}
