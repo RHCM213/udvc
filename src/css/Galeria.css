@@ -1,0 +1,13 @@
+.galery_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 10px 10px;
+}
+
+.photo_udvc img {
+    width: 100%;
+}
+
+.photo_udvc {
+    background-color: black;
+}

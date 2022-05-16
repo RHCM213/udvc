@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../../css/Header.css';
+import MenuHamb from './MenuHamb';
 
 export default function Header() {
+  
+  const [hamburgOn, setHamburgOn] = useState(false);
+
   return (
-    <header role="banner">
-      <div className="header_container hdrftr_cont"> 
-        <h1>
-          <NavLink to="/" title="Home" role="link home" aria-label="ir para página home" >
-          <img src="/images/header/L_header_01.svg" alt="simbolo UDVC"/>
-          </NavLink>
-        </h1>
+    <header role="banner"> 
+      <h1>
+        <NavLink to="/" title="Home" role="link home" aria-label="ir para página home" >
+        <img src="/images/header/L_header_01.svg" className="logo_1" alt="simbolo UDVC"/>
+        <img src="/images/header/L_header_02.svg" className="logo_2" alt="simbolo UDVC"/>
+        </NavLink>
+      </h1>
+      <div className="header_menu">
         <nav>
           <ul>
             <li>
@@ -32,12 +37,18 @@ export default function Header() {
               <NavLink to="/Loja" title="Loja" className="nav_link"><img src="/images/header/store-solid.svg" className="header_icon" aria-label="ir para loja" alt="loja"/>LOJA</NavLink>
             </li>
           </ul>
-          <div className="shopcard">
-          <img src="/images/header/cart-shopping-solid.svg" aria-label="ir para carro de compras" className="header_icon" alt="carro de compras"/>0
-          </div>                
         </nav>
+        <div className="shopcard">
+        <img src="/images/header/cart-shopping-solid.svg" aria-label="ir para carro de compras" className="header_icon" alt="carro de compras"/>0
+        </div>
+        <div class="hamburger_nav" role="button" onClick={()=>setHamburgOn(!hamburgOn)}>
+          <img src="/images/header/bars-solid.svg" alt="icone menu"/></div>                
       </div>
+      {hamburgOn && <div className="modal_hamburguer modalart">
+        <button className="close_btn" onClick={()=>setHamburgOn(!hamburgOn)}></button>
+          <MenuHamb toggleh={()=>setHamburgOn(!hamburgOn)}/>
+      </div>
+      }
     </header>
-
   )
 }

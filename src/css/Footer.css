@@ -5,6 +5,13 @@ footer {
 }   
 
 
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
 .footer_container p {
     line-height: 1.5rem;
     font-size: 1.5vw;

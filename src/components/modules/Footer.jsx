@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer role="contentinfo">
       
-      <div className="footer_container hdrftr_cont"> 
+      <div className="footer_container"> 
         <div className="footer_infocontainer">
             <p>Rua União Desportiva, 5 - Vila Chã, Barreiro / Contacto Geral: 212 150 227</p>
             <p>(2022) Site Oficial União Desportiva de Vila Chã</p> 

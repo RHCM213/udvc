@@ -75,16 +75,8 @@ body {
 
 
 header, footer {
-    display: grid;  
-    grid-template-columns: 1fr;
-    background: linear-gradient( 90deg, #3B061E 35%, #660033 100% ); 
-}
-
-
-.hdrftr_cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    background: linear-gradient( 90deg, #3B061E 35%, #660033 100% );
 }
 
 
@@ -92,11 +84,6 @@ main {
     margin: 5vw 5vw 15vw 5vw;
 }
 
-/* @media screen and (min-width: 1200px) {
-    main {
-        margin: 15vw 15vw 45vw 15vw;
-    }
-} */
 
 ::-webkit-scrollbar {
     width: 1.5vw;   

@@ -23,47 +23,19 @@ export default function Galeria() {
   };
 
 
-
-
   return (
-    <main>
-      <div>
-        <input type="search" className="search" aria-label="pesquisar fotos" placeholder="Pesquisar" value={searchField} onChange={handleChange} />
+    <main className='main_galery'>
+      <input type="search" className="search" aria-label="pesquisar fotos" placeholder="Pesquisar" value={searchField} onChange={handleChange} />
+      <div className="galery_container">
+        {filteredPhotos.map((photo, index) => (
+          <div key={index} className="photo_udvc">
+            <img src={"/images/galeria/" + photo.url } alt={photo.desc} />
+            <p>{photo.leg}</p>
+          </div>
+        ))
+        }
       </div>
-      {filteredPhotos.map((photo, index) => (
-              <div key={index} className="photo_udvc">
-                <img src={"/images/galeria/" + photo.url } alt={photo.desc} />
-                <p>{photo.leg}</p>
-              </div>
-      ))
-      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
     </main>
   )
 }
