@@ -1,0 +1,24 @@
+.modal_prod {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.single_prod img {
+    width: 100%;
+
+}
+
+
+.single_prod {
+    width: calc(20rem + 10vw); 
+    display: grid;
+    grid-template: auto auto / 4fr 1fr;
+    column-gap: 1vw;
+}
+
+
+.single_prod_info {
+    grid-column: span 2;
+    background-color: #660033;
+}
