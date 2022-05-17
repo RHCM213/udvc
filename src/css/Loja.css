@@ -1,0 +1,34 @@
+.store_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 0.63rem 0.63rem;
+}
+
+
+.product img {
+    width: 100%;
+}
+
+.prod_info {
+    padding: 0.5rem;
+    
+}
+
+.product {
+    background-color: #660033;
+    text-align: center;
+}
+
+.prod_info h2, p {  
+    font-family:'Roboto Serif', serif;
+    font-size: 1.15rem; 
+    font-weight: 300;
+    line-height: 1.3rem;
+}
+
+.prod_info p {  
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+}
+

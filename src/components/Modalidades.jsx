@@ -31,7 +31,7 @@ export default function Modalidades() {
   
   function fut7Click() {
     setFut7On(!fut7On);   
-    futsalRef.current.scrollIntoView({ behavior: 'smooth' })
+    fut7Ref.current.scrollIntoView({ behavior: 'smooth' })
   };
 
 
@@ -69,7 +69,8 @@ export default function Modalidades() {
           <li onClick={futsalClick}>
               <h2 ref={futsalRef}>Futsal 2021/22 &#8794;</h2>
           </li>
-          {futsalOn && <div className="toggleDiv futsalteam_container">
+          {futsalOn && <div className="toggle_div">
+            <div className="futsalteam_container">
             {futsalplayers.map ((futsalplayer, index) => (
               <div key={index} className="futsal_player">
                 <img src={"/images/futsal/" + futsalplayer.photo } alt={futsalplayer.desc} />
@@ -77,8 +78,11 @@ export default function Modalidades() {
               </div>
             ))
             }
-            <p>Treinador: José Vacão</p>
-            <p>Treinos: 3ºF e 5ªF no Pavilhão C.Sol</p>               
+            </div>
+            <div className="futsalteam_trein">
+              <p>Treinador: José Vacão</p>
+              <p>Treinos: 3ºF e 5ªF no Pavilhão C.Sol</p>     
+            </div>          
           </div> 
           }        
            
@@ -86,7 +90,7 @@ export default function Modalidades() {
           <li onClick={fut7Click}>
               <h2 ref={fut7Ref}>Futebol 7 - Infantis 2021/22 &#8794;</h2>
           </li>
-          {fut7On && <div className="toggleDiv">
+          {fut7On && <div className="toggle_div">
             <p>Treinador: Mário Dias</p>
             <p>Treinos: Data e Hora a Informar</p> 
           </div>}
@@ -95,7 +99,7 @@ export default function Modalidades() {
           <li onClick={mbaskClick}>
             <h2 ref={mbaskRef}>Mini-Basket 2021/22 &#8794;</h2>
           </li>
-          {mbaskOn && <div className="toggleDiv">
+          {mbaskOn && <div className="toggle_div">
             <p>Treinador: Rebelo Fonseca</p>
             <p>Treinos: Data e Hora a Informar</p> 
           </div>}
@@ -104,7 +108,7 @@ export default function Modalidades() {
           <li onClick={dancsalClick}>
             <h2 ref={dancsalRef}>Danças de Salão 2021/2022 &#8794;</h2>
           </li>
-          {dancsalOn && <div className="toggleDiv">
+          {dancsalOn && <div className="toggle_div">
             <p>Professora: Dora Santos</p>
             <p>Ensaios: 3ªF e 5ªF, 20h na Sede</p>
           </div>}
@@ -113,7 +117,7 @@ export default function Modalidades() {
           <li onClick={pilatClick}>
             <h2 ref={pilatRef}>Pilates 2021/22 &#8794;</h2>
           </li>
-          {pilatOn && <div className="toggleDiv">
+          {pilatOn && <div className="toggle_div">
             <p>Professora: Elizabete Galhoz</p>
             <p>Treinos: 2ªF e 4ªF, 19.30h na Sede</p>
           </div>}

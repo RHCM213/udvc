@@ -75,18 +75,18 @@ body {
 
 
 header, footer {
-    display: grid;
     background: linear-gradient( 90deg, #3B061E 35%, #660033 100% );
 }
 
 
 main {
-    margin: 5vw 5vw 15vw 5vw;
+    margin: 5vw 5vw 20vw 5vw;
 }
 
 
 ::-webkit-scrollbar {
-    width: 1.5vw;   
+    width: 1.5vw;
+    min-width: 0.8rem;   
 }
    
 ::-webkit-scrollbar-track {
@@ -101,7 +101,6 @@ main {
 ::-webkit-scrollbar-thumb:hover {
     background: #3B061E;
 }
-
 
 
 h2, h3 {
@@ -137,9 +136,12 @@ p {
 
 
 .close_btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     background: url("/public/images/outros/circle-xmark-solid.svg");
-    width: 100px;
-    height: 100px;
+    width: 2rem;
+    height: 2rem;
     border: none;
 	cursor: pointer;
 }
@@ -150,5 +152,61 @@ p {
 }
 
 
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    color: rgb(255,255,255); 
+    background-color: rgba(59, 6, 30, 0.95);
+}
 
 
+.modal::-webkit-scrollbar-track {
+    background: #8888;       
+}
+    
+.modal::-webkit-scrollbar-thumb {
+    background: #660033; 
+    border-radius: 0.5rem;
+}
+
+
+.space::before {
+    content: "\a";
+    white-space: pre;
+}
+
+/* Clube/Sócios/Modalidades : ---------- */
+
+.list_container {
+    margin-bottom: 60vw; 
+    padding: 0 10vw;
+
+}
+/* Não esquecer de colocr margin-top p mobile */
+
+.list_container h2 {
+    text-align: center;
+    font-size:calc(0.68rem + 1.2vw);
+}
+
+.list_container li:nth-child(odd) {
+    background-color: #3B061E;   
+}
+
+.list_container li:nth-child(even) {
+    background-color: #660033 ;   
+}
+
+.toggle_div {
+    background-color: #3B061E;
+    padding: 5vw;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */

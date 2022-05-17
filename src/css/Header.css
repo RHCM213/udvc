@@ -1,11 +1,15 @@
 header { 
-    grid-template-columns: auto 1fr;
-    padding: 1.3vw 5vw 1vw 5vw;    
+    padding: 1.3vw 5vw 1vw 5vw; 
+    display: flex;
+    align-items:flex-end;
+    justify-content:space-between ;    
 }
+
 
 .logo_1 {
     width: 11vw;    
 }
+
 
 .logo_2 {
     display: none;
@@ -16,10 +20,8 @@ header {
 
 .header_menu {
     display: flex;
-    align-items:flex-end; 
-    justify-content: flex-end;
+    margin-bottom: 0.5rem;    
 }
-
 
 
 header nav {
@@ -106,9 +108,17 @@ nav li {
         display: none;
     }
 
-    
     .hamburger_nav {
         display: block;   
+    }
+
+    .header_menu {
+        align-items: center; 
+        margin-bottom: 0;   
+    }
+
+    .shopcard {
+        margin-bottom: 0;
     }
 
 }

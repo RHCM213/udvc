@@ -44,7 +44,7 @@ export default function Header() {
         <div class="hamburger_nav" role="button" onClick={()=>setHamburgOn(!hamburgOn)}>
           <img src="/images/header/bars-solid.svg" alt="icone menu"/></div>                
       </div>
-      {hamburgOn && <div className="modal_hamburguer modalart">
+      {hamburgOn && <div className="modal_hamburguer modal">
         <button className="close_btn" onClick={()=>setHamburgOn(!hamburgOn)}></button>
           <MenuHamb toggleh={()=>setHamburgOn(!hamburgOn)}/>
       </div>

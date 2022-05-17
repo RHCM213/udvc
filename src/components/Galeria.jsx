@@ -25,12 +25,14 @@ export default function Galeria() {
 
   return (
     <main className='main_galery'>
-      <input type="search" className="search" aria-label="pesquisar fotos" placeholder="Pesquisar" value={searchField} onChange={handleChange} />
+      <div className="photo_search">
+        <input type="search" aria-label="pesquisar fotos" placeholder="&#128270;&#xFE0E;" value={searchField} autoFocus onChange={handleChange} />
+      </div>
       <div className="galery_container">
         {filteredPhotos.map((photo, index) => (
           <div key={index} className="photo_udvc">
             <img src={"/images/galeria/" + photo.url } alt={photo.desc} />
-            <p>{photo.leg}</p>
+            <div>{photo.leg}</div>
           </div>
         ))
         }

@@ -21,7 +21,7 @@ export default function Socios() {
           <li onClick={()=>setRegistOn(!registOn)}>
             <h2>Inscrição Sócio &#8788;</h2>
           </li>
-            {registOn && <div className="modalart">
+            {registOn && <div className="modal">
               <button className="close_btn" onClick={()=>setRegistOn(!registOn)}></button> 
               <FormInsc />
             </div>}       
@@ -29,7 +29,7 @@ export default function Socios() {
           <li onClick={()=>setPayfeeOn(!payfeeOn)}>
             <h2>Pagamento Quotas &#8788;</h2>
           </li>
-            {payfeeOn && <div className="modalart">
+            {payfeeOn && <div className="modal">
             <button className="close_btn" onClick={()=>setPayfeeOn(!payfeeOn)}></button> 
             <FormPag />            
            </div>}

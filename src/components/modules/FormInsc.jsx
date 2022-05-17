@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormMB from './FormMB';
+import "../../css/FormInsc.css"
 
 
 export default function FormInsc() {
@@ -9,6 +10,7 @@ export default function FormInsc() {
   const [formData, setFormData] = useState({
       fullName: "",
       ccidadao: "",
+      dnascimento: "",
       address: "",
       email: "",
       telef:"",
@@ -55,7 +57,10 @@ export default function FormInsc() {
           <p>OFERTAS: 2 Meses de Quotas // 2 Fatos de Treino e 1 Chapéu (só Pack Familia)</p>
           <form onSubmit={ handleSubmit }>
             <input type="text" name="fullName" arial-label="nome completo" placeholder="Nome Completo" minLength="3" maxLength="40" required autoFocus onChange={handleChange} value={formData.fullname} />
-            <input type="text" name="ccidadao" arial-label="nº cartão cidadão" pattern="[0-9]{8}" placeholder="Nº C.Cidadão" required onChange={handleChange} value={formData.ccidadao} />
+            <div className="insc_cc_dn">
+              <input type="text" name="ccidadao" arial-label="nº cartão cidadão" pattern="[0-9]{8}" placeholder="Nº C.Cidadão" required onChange={handleChange} value={formData.ccidadao} />
+              <input type="date" name="dnascimento" arial-label="data de nascimento" placeholder="Data de Nascimento" required onChange={handleChange} value={formData.dnascimento} />
+            </div>
             <input type="text" name="address" arial-label="morada" placeholder="Morada" minLength="3" required onChange={handleChange} value={formData.address} />
             <input type="email" name="email" arial-label="email" placeholder="Email" required onChange={handleChange} value={formData.email} />
             <input type="tel" name="telef" arial-label="telefone" placeholder="Telefone" pattern="^[0-9-+\s()]*$" required onChange={handleChange} value={formData.telef} />

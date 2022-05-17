@@ -22,7 +22,7 @@ export default function Footer() {
             <div>
               <img src="/images/footerShare/envelope-solid.svg" aria-label="enviar mensagem" alt="simbolo envelope" onClick={()=>setMsgrOn(!msgrOn)}/>
             </div>
-              {msgrOn && <div className="modalart">
+              {msgrOn && <div className="modal">
                 <button className="close_btn" onClick={()=>setMsgrOn(!msgrOn)}></button> 
                 <FormMsg />
             </div>}       
