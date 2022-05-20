@@ -91,7 +91,7 @@ nav li {
     header {
         position: fixed;
         top: 0;
-        width: 90%;
+        width: 100%;
         padding: 2.6vw 5vw 1.6vw; 
         z-index: 1;       
     }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import '../../css/Header.css';
-import MenuHamb from './MenuHamb';
+import '../../css/Header.css'
+import MenuHamb from './MenuHamb'
 
 export default function Header() {
   
@@ -41,7 +41,7 @@ export default function Header() {
         <div className="shopcard">
         <img src="/images/header/cart-shopping-solid.svg" aria-label="ir para carro de compras" className="header_icon" alt="carro de compras"/>0
         </div>
-        <div class="hamburger_nav" role="button" onClick={()=>setHamburgOn(!hamburgOn)}>
+        <div className="hamburger_nav" role="button" onClick={()=>setHamburgOn(!hamburgOn)}>
           <img src="/images/header/bars-solid.svg" alt="icone menu"/></div>                
       </div>
       {hamburgOn && <div className="modal_hamburguer modal">

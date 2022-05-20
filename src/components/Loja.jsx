@@ -3,6 +3,7 @@ import "../css/Loja.css"
 import "../css/ModalProd.css"
 
 export default function Loja({products, togglep}) {
+  
   useEffect(() => {
     window.scrollTo({top: 0})
   }, []);

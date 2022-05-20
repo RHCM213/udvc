@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import '../../css/MenuHamb.css';
+import { NavLink } from 'react-router-dom'
+import '../../css/MenuHamb.css'
 
 export default function ({toggleh}) {
   return (

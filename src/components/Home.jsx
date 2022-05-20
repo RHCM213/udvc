@@ -1,11 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import FormInsc from './modules/FormInsc'
 import '../css/Home.css'
 import "../css/ModalProd.css"
+import "../css/ModalArtg.css"
 
 
 export default function Home({articles, toggle, products, togglep}) {
+
+  useEffect(() => {
+    window.scrollTo({top: 0})
+  }, []);
+
         
   const homeArticles = articles.slice(0, 3);
   
@@ -35,21 +41,28 @@ export default function Home({articles, toggle, products, togglep}) {
         <div className="home_articles">
           {homeArticles.map ((homeArticle, index) => (
 
-          <article key={index} className="home_article">
+          <article key={index} className={!homeArticle.modalVisible ? "home_article" : ""}>
             <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc } onClick={()=>toggle(index)}/>
             <div className="home_articletxt">
               <h2 onClick={()=>toggle(index)}>{ homeArticle.title }</h2>
-              <div>{ homeArticle.excerpt.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
+              <div>{ homeArticle.excerpt.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>
               <div className="btn_txt" role="button" onClick={()=>toggle(index)}>Continuar a Ler...</div>
             </div>
             {homeArticle.modalVisible && 
-              <div className="modal_hart modal">
-                <article className="singleart">
-                  <button className="close_btn" onClick={()=>toggle(index)}></button>
+              <div className="modal">
+                <article className="single_artg">  
+                  <button className="close_btn" onClick={()=>toggle(index)}></button>                
                   <img src= { "/images/artg/" + homeArticle.img } alt={ homeArticle.desc }/>
-                  <h2>{ homeArticle.title }</h2>
-                  <div>{ homeArticle.text.split('\n').map((txt, i) => <p key={i}>{txt}</p>) }</div>
-                  <p className="postdate">{ homeArticle.postdate }</p>      
+                  <div> 
+                    <h2>{ homeArticle.title }</h2>
+                    <div>{ homeArticle.text.split('\n').map((txt, i) => <p key={i} className="space">{txt}</p>) }</div>     
+                  </div>
+                  <p className="postdate space">{ homeArticle.postdate }</p> 
+                  <div className="single_artg_share">
+                    <a href="#"><img src="/images/footerShare/facebook-brands.svg" aria-label="partilhar para facebook" alt="simbolo facebook"/></a>
+                    <a href="#"><img src="/images/footerShare/twitter-brands.svg" aria-label="partilhar para twitter" alt="simbolo twitter"/></a>
+                    <a href="#"><img src="/images/footerShare/whatsapp-brands.svg" aria-label="partilhar para whatsapp" alt="simbolo whatsapp"/></a>
+                  </div>                   
                 </article>
               </div>
             }          

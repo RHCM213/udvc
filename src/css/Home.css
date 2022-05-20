@@ -7,6 +7,7 @@
     font-weight: 600;
     font-style: italic;
     cursor: pointer;
+    margin-top: 0.8rem;
 }
 
 
@@ -54,7 +55,6 @@
 
 
 .home_article p {
-    margin: 1.2rem 0;
     font-size: 1.8vw;
 }
 
@@ -230,17 +230,20 @@
     }
 
     .home_article:nth-child(1){
-        display:block;        
+        display: block;        
     }
 
     .home_article:nth-child(n+2) img {
-        display: none;
-        
+        display: none; 
+    } 
+
+    .home_articlemd:nth-child(n+2) img {
+        display: block;
     }
 
+
     .home_article:nth-child(2) div {
-        background-color: #3B061E;
-        
+        background-color: #3B061E;    
     }
 
     .home_pub .img_1 {
@@ -251,11 +254,10 @@
         display: block;
     }
 
-
    
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 420px) {
 
 
 

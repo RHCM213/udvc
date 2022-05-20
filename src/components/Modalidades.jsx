@@ -1,7 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "../css/Modalidades.css"
 
 export default function Modalidades() {
+
+  useEffect(() => {
+    window.scrollTo({top: 0})
+  }, []);
   
   const futsalplayers = [
       {photo:"Player_01.jpg", desc:"jogador da equipa de futsal", nr:1},

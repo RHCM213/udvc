@@ -16,16 +16,16 @@
     border-style: none;
     border-radius: 5rem;
     font-size: 1.3rem;
-    color: #3B061E;
+    color: #660033;
     width: 28vw;
     min-width: 13rem;
     height: 3.5vw;  
     min-height: 1.5rem; 
-    padding: 0.5rem;  
+    padding: 0.5rem;
 }
 
 .photo_search input::placeholder {
-    color: #3B061E; 
+    color: rgba(255, 255, 255, 0.7); 
     padding-left: 2%; 
     font-size: 80%;
 }
@@ -41,8 +41,13 @@
 
 .photo_search input:focus {
 	outline: none;
-  	border: 0.3vw solid #a0034a;
 }
+
+
+.photo_search input:hover {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
 
 .photo_udvc img {
     width: 100%;

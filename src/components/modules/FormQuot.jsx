@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import FormMB from './FormMB';
+import PagMB from './PagMB'
+import '../../css/Forms.css'
 
 export default function FormQuot() {
    
@@ -8,7 +9,7 @@ export default function FormQuot() {
   const [formData, setFormData] = useState({
       memberNumber: "",
       ccidadao: "",
-      q_categ: "2",
+      fee_categ: "2",
       feeQuant: ""
   });
 
@@ -33,30 +34,31 @@ export default function FormQuot() {
 
 
   return (
-    <div className="form_quot">
+    <div>
         {formSubmitted &&
-            <div>
-                <FormMB />
-                <p>Valor a Pagar:{ formData.q_categ*formData.feeQuant }€</p> 
+            <div className="modal_mb">
+                <PagMB />
+                <p>Valor a Pagar: { formData.fee_categ*formData.feeQuant }€</p> 
             </div>   
         }      
         {!formSubmitted &&    
-            <div>   
+            <div className="form_container">   
                 <h2>PAGAMENTO QUOTAS</h2>
-                <p>CLASSES: Quota Normal: 2€ // Quota &lt; 23 anos: 1€</p>
                 <form onSubmit={ handleSubmit }>
-                    <input type="text" name="memberNumber" arial-label="nº de sócio" placeholder="Nº Sócio" minLength="5" autoFocus required onChange={handleChange} value={formData.memberNumber} />
-                    <input type="text" name="ccidadao" arial-label="nº cartão cidadão" placeholder="Nº C.Cidadão" pattern="[0-9]{8}" required onChange={handleChange} value={formData.ccidadao} />
-                    <label>
-                        Classe 
-                        <select name="q_categ" onChange={ handleChange } value={ formData.q_categ } >
-                            <option value="2">Quota Normal</option>
+                    <div className="form_grid form_1_1">
+                        <input type="text" name="memberNumber" arial-label="nº de sócio" placeholder="Nº Sócio" minLength="5" autoFocus required onChange={handleChange} value={formData.memberNumber} />
+                        <input type="text" name="ccidadao" arial-label="nº cartão cidadão" placeholder="Nº C.Cidadão" pattern="[0-9]{8}" required onChange={handleChange} value={formData.ccidadao} />
+                    </div>
+                    <div className="form_grid form_2_1">
+                        <select name="fee_categ" onChange={ handleChange } value={ formData.q_categ } arial-label="Categoria de Sócio">
+                            <option value="2">Quota Normal&nbsp;&nbsp;&#x2228;</option>
                             <option value="1">Quota &lt; 23</option>
                         </select>
-                    </label>
                         <input type="number" name="feeQuant" arial-label="Nº de Quotas" placeholder="Nº Meses" required onChange={handleChange} value={formData.feeQuant} />
-                    <button type="submit">Confirmar</button>         
+                    </div>
+                    <button type="submit" className="btn btn_form">Confirmar</button>         
                 </form>
+                <p className="fee_info">CLASSES: Quota Normal: 2€ // Quota &lt; 23 anos: 1€</p>
             </div> 
     }
     </div>

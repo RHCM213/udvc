@@ -5,6 +5,7 @@ footer {
 }   
 
 
+
 .footer_container {
     display: flex;
     justify-content: space-between;
@@ -31,5 +32,13 @@ footer {
 
 
 .footer_iconscontainer img {
-    height: 1.4rem;      
+    height: 1.4rem;    
+    cursor: pointer;  
+}
+
+.modal_msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
 }

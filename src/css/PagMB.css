@@ -1,0 +1,18 @@
+.mb_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #ffff;
+    border-radius: 0 25px 0 25px;
+    width: fit-content;
+    padding: 3rem;
+    margin: 1rem;
+
+}
+
+.mb_info p {
+    line-height: 2rem;
+    color: #000;   
+}
+

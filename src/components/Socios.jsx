@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../css/Socios.css"
-
-import FormInsc from './modules/FormInsc';
-import FormPag from './modules/FormQuot';
+import FormInsc from './modules/FormInsc'
+import FormQuot from './modules/FormQuot'
 
 
 export default function Socios() {
+
+  useEffect(() => {
+    window.scrollTo({top: 0})
+  }, []);
   
   const [registOn, setRegistOn] = useState(false);
  
@@ -21,7 +24,7 @@ export default function Socios() {
           <li onClick={()=>setRegistOn(!registOn)}>
             <h2>Inscrição Sócio &#8788;</h2>
           </li>
-            {registOn && <div className="modal">
+            {registOn && <div className="modal modal_insc">
               <button className="close_btn" onClick={()=>setRegistOn(!registOn)}></button> 
               <FormInsc />
             </div>}       
@@ -29,14 +32,14 @@ export default function Socios() {
           <li onClick={()=>setPayfeeOn(!payfeeOn)}>
             <h2>Pagamento Quotas &#8788;</h2>
           </li>
-            {payfeeOn && <div className="modal">
+            {payfeeOn && <div className="modal modal_fee">
             <button className="close_btn" onClick={()=>setPayfeeOn(!payfeeOn)}></button> 
-            <FormPag />            
+            <FormQuot />            
            </div>}
 
           <li>
           <a href="./docs/UDVC_Estatutos.pdf" download>
-            <h2>Estatutos &#11123;</h2></a>
+            <h2>Estatutos &#x2B73;</h2></a>
           </li>
         </ul>     
       </div>

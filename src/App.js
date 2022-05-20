@@ -225,8 +225,7 @@ function App() {
             <Route path="/galeria" element={<Galeria />} />
             <Route path="/loja" element={<Loja products={products} togglep={(index)=>toggleProductOn(index)} />} />
           </Routes> 
-          <Footer />         
-        
+          <Footer />               
       </div>
     </BrowserRouter>
   );

@@ -4,17 +4,16 @@
     align-items: center;  
 }
 
-.single_prod img {
-    width: 100%;
-
-}
-
-
 .single_prod {
     width: calc(20rem + 10vw); 
     display: grid;
     grid-template: auto auto / 4fr 1fr;
     column-gap: 1vw;
+}
+
+
+.single_prod img {
+    width: 100%;
 }
 
 
